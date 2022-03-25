@@ -14,7 +14,10 @@ def prinicipal():
 @app.route('/create', methods=['POST'])
 def create():
   title = request.form.get('name')
-  contacts.append({'name' : title})
+  email = request.form.get('email')
+  phone = request.form.get('phone')
+  
+  contacts.append({'name' : title,'email' : email,'phone': phone})
   return redirect('/')
 
 if __name__ == '__main__':
